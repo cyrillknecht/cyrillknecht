@@ -1,5 +1,6 @@
-- 👋 Hi, I’m @cyrillknecht
-- 🌱 I’m currently studying Electrical Engineering and Information Technologies @[ETH Zurich](https://ethz.ch/en.html)
+- 👋 Hi, I’m Cyrill
+- 👨‍🔬 I’m currently studying Electrical Engineering and Information Technologies @[ETH Zurich](https://ethz.ch/en.html)
+
 - 📫 You can reach me at cyrknech@student.ethz.ch
 
 <!---
