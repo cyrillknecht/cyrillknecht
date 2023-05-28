@@ -62,7 +62,7 @@ between the app and the IoT platform
 and the smart patch using MQTT and BLE in Python
 
 ##### 👥 Group Project
-***Optogenetic stimulation of neuronal networks in vitro***
+***Optogenetic stimulation of neuronal networks in vitro***:
 Developed a system to stimulate neuronal networks in vitro with light.
 - Building an optical setup
 - Working in a wet lab
