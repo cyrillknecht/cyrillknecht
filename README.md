@@ -6,7 +6,7 @@ My focus lies on 🧠Machine Learning.
 📧 You can reach me at **cyrknech [at] student [dot] ethz [dot] ch**
 
 
-## 📚 Fields of Expertise
+## 🔍 Fields of Expertise
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-%23FF6F00.svg?style=for-the-badge&logo=Deep%20Learning&logoColor=white)
 ![Computer Vision](https://img.shields.io/badge/Computer%20Vision-%23013243.svg?style=for-the-badge&logo=Computer%20Vision&logoColor=white)
 ![Reinforcement Learning](https://img.shields.io/badge/Reinforcement%20Learning-%23150458.svg?style=for-the-badge&logo=Reinforcement%20Learning&logoColor=white)
