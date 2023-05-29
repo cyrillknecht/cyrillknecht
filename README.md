@@ -1,10 +1,18 @@
 # 👋😊 Hi, I’m Cyrill. Nice to meet you!
 
-## 🙋‍♂️ About Me
-‍🔬 I’m currently studying 💻Electrical Engineering and Information Technologies @[ETH Zurich](https://ethz.ch/en.html).
-My focus lies on 🧠Machine Learning.
 
-📧 You can reach me at **cyrknech [at] student [dot] ethz [dot] ch**
+
+## 🙋‍♂️ About Me
+‍I’m currently studying 💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)
+@[ETH Zurich](https://www.ethz.ch/en.html).
+
+
+My focus lies on 🧠Machine Learning and 👁️Computer Vision.
+
+I am also interested in 🤖Robotics and 👨‍💻Software Engineering in general.
+
+ You can reach me at 📧*cyrknech [at] student [dot] ethz [dot] ch* or on *Linked* 
+ [<img src="https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/linkedin.svg" alt="LinkedIn" width="20" style="filter: invert(1);">](https://www.linkedin.com/in/cyrill-david-knecht).
 
 
 ## 🔍 Fields of Expertise
@@ -15,20 +23,20 @@ My focus lies on 🧠Machine Learning.
 ![Software Engineering](https://img.shields.io/badge/Software%20Engineering-%23007ACC.svg?style=for-the-badge&logo=Software%20Engineering&logoColor=white)
 ![Control Theory](https://img.shields.io/badge/Control%20Theory-%2300599C.svg?style=for-the-badge&logo=Control%20Theory&logoColor=white)
 
-## 📚 Most Relevant ETH Courses
-- Introduction to Machine Learning
-- Probabilistic Artificial Intelligence
-- Deep Learning
-- Image Analysis and Computer Vision
-- Robot Learning
-- Big Data
-- Software Engineering
+## 📚 Most Relevant Visited ETH Courses
+- [Introduction to Machine Learning](https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=167629&semkez=2023S&ansicht=LEHRVERANSTALTUNGEN&lang=en)
+- [Probabilistic Artificial Intelligence](https://www.vorlesungen.ethz.ch//Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=147370&semkez=2021W&ansicht=LEHRVERANSTALTUNGEN&lang=en)
+- [Deep Learning](https://www.vorlesungen.ethz.ch//Vorlesungsverzeichnis/lerneinheit.view?semkez=2021W&ansicht=ALLE&lerneinheitId=148055&lang=en)
+- [Image Analysis and Computer Vision](https://www.vorlesungen.ethz.ch//lerneinheitPre.do?semkez=2021W&lerneinheitId=146800&lang=en)
+- [Robot Learning](https://www.vorlesungen.ethz.ch//Vorlesungsverzeichnis/lerneinheit.view?semkez=2022S&ansicht=KATALOGDATEN&lerneinheitId=161281&lang=en)
+- [Big Data for Engineers](https://www.vorlesungen.ethz.ch//lerneinheitPre.do?semkez=2018S&lerneinheitId=122247&lang=en)
+- [Software Engineering](https://www.vorlesungen.ethz.ch//Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=136949&semkez=2020S&ansicht=KATALOGDATEN&lang=de)
 
 
 ## 📂 Projects
 Projects I have worked on during my studies at ETH Zurich.
 In order to respect the privacy of my fellow students, I will not publish any code here.
-Chronological order.
+The projects are listed in chronological order.
 
 ### 📚 Course Projects
 
