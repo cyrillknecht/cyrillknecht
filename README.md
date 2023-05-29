@@ -28,38 +28,21 @@ My focus lies on 🧠Machine Learning.
 Projects I have worked on during my studies at ETH Zurich.
 In order to respect the privacy of my fellow students, I will not publish any code here.
 Chronological order.
-##### 🎓📜 Master Thesis
-TBD
-##### 🗓️ Semester Project
-TBD
+
 #### 📚 Course Projects
 
-***Robot Learning:*** WalkDog
-- Used the Dreamer Reinforcement Learning 
-algorithm to train a quadruped robot
-(Unitree Go1) to
-walk different terrains in the
-Isaac Gym environment.
-
-***Software Engineering:*** No Limit Texas Hold'em Poker
-- Developed a multiplayer 
-poker game using C++ and wxWidgets
-
-***Deep Learning:***
-Self-Augmentation Network for 
-Sarcasm Generation with Synthetic Data
-- Made use of GPT-2 to generate synthetic data
-- Fine-tuned Bert for sarcasm detection
+| Course | Project  |  Description    | 
+|------------|------|-----------------|      
+| Robot Learning |  WalkDog | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment.  |  
+| Software Engineering |  No Limit Texas Hold'em Poker | Developed a multiplayer poker game using C++ and wxWidgets.   |      
+| Deep Learning | Self-Augmentation Network for Sarcasm Generation with Synthetic Data | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.   |                   
 
 #### 🎓 Bachelor Thesis
 ***Smart Patch Flagship Project:***
-Developed a smart patch wearable device to 
-monitor the health of the wearer.
+Developed a smart patch wearable device to monitor the health of the wearer.
 - Working with an IoT platform
-- Developing a cross-platform app with flutter
-- Developing a communication interface
-between the app and the IoT platform 
-and the smart patch using MQTT and BLE in Python
+- Developing a cross-platform app with Flutter
+- Developing a communication interface between the app and the IoT platform and the smart patch using MQTT and BLE in Python
 
 ##### 👥 Group Project
 ***Optogenetic stimulation of neuronal networks in vitro***:
@@ -67,9 +50,6 @@ Developed a system to stimulate neuronal networks in vitro with light.
 - Building an optical setup
 - Working in a wet lab
 - Python programming
-
-
-
 
 ## 🔧 Languages, Frameworks and Tools
 A list of languages, frameworks and tools I have used before or am currently using.
