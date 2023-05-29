@@ -14,7 +14,7 @@ My focus lies on 🧠Machine Learning.
 ![Software Engineering](https://img.shields.io/badge/Software%20Engineering-%23007ACC.svg?style=for-the-badge&logo=Software%20Engineering&logoColor=white)
 ![Control Theory](https://img.shields.io/badge/Control%20Theory-%2300599C.svg?style=for-the-badge&logo=Control%20Theory&logoColor=white)
 
-### 📚 Relevant Courses
+### 📚 Most Relevant ETH Courses
 - Introduction to Machine Learning
 - Probabilistic Artificial Intelligence
 - Deep Learning
