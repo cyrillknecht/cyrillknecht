@@ -1,5 +1,6 @@
 # 👋😊 Hi, I’m Cyrill. Nice to meet you!
 
+## 🙋‍♂️About Me
 ‍🔬 I’m currently studying ⚡💻🔌Electrical Engineering and Information Technologies @[ETH Zurich](https://ethz.ch/en.html).
 My focus lies on 🧠Machine Learning.
 
@@ -14,7 +15,7 @@ My focus lies on 🧠Machine Learning.
 ![Software Engineering](https://img.shields.io/badge/Software%20Engineering-%23007ACC.svg?style=for-the-badge&logo=Software%20Engineering&logoColor=white)
 ![Control Theory](https://img.shields.io/badge/Control%20Theory-%2300599C.svg?style=for-the-badge&logo=Control%20Theory&logoColor=white)
 
-### 📚 Most Relevant ETH Courses
+## 📚 Most Relevant ETH Courses
 - Introduction to Machine Learning
 - Probabilistic Artificial Intelligence
 - Deep Learning
@@ -24,12 +25,12 @@ My focus lies on 🧠Machine Learning.
 - Software Engineering
 
 
-### 📂 Projects
+## 📂 Projects
 Projects I have worked on during my studies at ETH Zurich.
 In order to respect the privacy of my fellow students, I will not publish any code here.
 Chronological order.
 
-#### 📚 Course Projects
+### 📚 Course Projects
 
 | Course | Project  |  Description    | 
 |------------|------|-----------------|      
@@ -37,14 +38,14 @@ Chronological order.
 | Software Engineering |  No Limit Texas Hold'em Poker | Developed a multiplayer poker game using C++ and wxWidgets.   |      
 | Deep Learning | Self-Augmentation Network for Sarcasm Generation with Synthetic Data | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.   |                   
 
-#### 🎓 Bachelor Thesis
+### 🎓 Bachelor Thesis
 ***Smart Patch Flagship Project:***
 Developed a smart patch wearable device to monitor the health of the wearer.
 - Working with an IoT platform
 - Developing a cross-platform app with Flutter
 - Developing a communication interface between the app and the IoT platform and the smart patch using MQTT and BLE in Python
 
-##### 👥 Group Project
+### 👥 Group Project
 ***Optogenetic stimulation of neuronal networks in vitro***:
 Developed a system to stimulate neuronal networks in vitro with light.
 - Building an optical setup
