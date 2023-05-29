@@ -32,11 +32,11 @@ Chronological order.
 
 ### 📚 Course Projects
 
-| Course               | Project                                                              | Description                                                                                                                                         | 
-|----------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
-| Robot Learning       | WalkDog                                                              | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
-| Software Engineering | No Limit Texas Hold'em Poker                                         | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
-| Deep Learning        | Self-Augmentation Network for Sarcasm Generation with Synthetic Data | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |                   
+| Course               | Project                                                                    | Description                                                                                                                                         | 
+|----------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
+| Robot Learning       | ***WalkDog***                                                              | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
+| Software Engineering | ***No Limit Texas Hold'em Poker***                                         | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
+| Deep Learning        | ***Self-Augmentation Network for Sarcasm Generation with Synthetic Data*** | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |                   
 
 ### 🎓 Bachelor Thesis
 ***Smart Patch Flagship Project:***
