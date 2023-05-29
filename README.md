@@ -1,19 +1,25 @@
 # 👋😊 Hi, I’m Cyrill. Nice to meet you!
+<a href="https://www.linkedin.com/in/cyrill-david-knecht/">
+  <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="40" height="40">
+</a>
+
+<a href="https://github.com/cyrillknecht">
+  <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="GitHub" style="width: auto; height: 40px;">
+</a>
 
 
 
 ## 🙋‍♂️ About Me
-‍I’m currently studying 💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)
+🎓 I’m currently studying 💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)
 @[ETH Zurich](https://www.ethz.ch/en.html).
 
-My focus lies on 🧠Machine Learning and 👁️Computer Vision.
+🎯 My focus lies on 🧠Machine Learning and 👁️Computer Vision.
 
-I am also interested in 🤖Robotics and 👨‍💻Software Engineering in general.
+📚 I am also interested in 🤖Robotics and 👨‍💻Software Engineering in general.
 
- You can reach me at 📧*cyrknech [at] student [dot] ethz [dot] ch* or on *Linked* 
-<a href="https://www.linkedin.com/in/cyrill-david-knecht/">
-  <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="25" height="25">
-</a>.
+📞 You can reach me at 📧**cyrknech [at] student [dot] ethz [dot] ch** 
+
+
 
 
 ## 🔍 Fields of Expertise
