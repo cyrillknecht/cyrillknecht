@@ -1,7 +1,7 @@
 # 👋😊 Hi, I’m Cyrill. Nice to meet you!
 
-## 🙋‍♂️About Me
-‍🔬 I’m currently studying ⚡💻🔌Electrical Engineering and Information Technologies @[ETH Zurich](https://ethz.ch/en.html).
+## 🙋‍♂️ About Me
+‍🔬 I’m currently studying 💻Electrical Engineering and Information Technologies @[ETH Zurich](https://ethz.ch/en.html).
 My focus lies on 🧠Machine Learning.
 
 📧 You can reach me at **cyrknech [at] student [dot] ethz [dot] ch**
