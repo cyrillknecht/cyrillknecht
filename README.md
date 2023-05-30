@@ -1,5 +1,8 @@
 # 👋😊 Hi, I’m Cyrill. Nice to meet you!
 
+<!---
+Social Media Icons
+-->
 <a href="https://www.linkedin.com/in/cyrill-david-knecht/">
   <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="40" height="40">
 </a>
@@ -18,7 +21,7 @@
 
 ## 🙋‍♂️ About Me
 🎓 I’m currently studying 💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)
-@[ETH Zurich](https://www.ethz.ch/en.html).
+@🏢[ETH Zurich](https://www.ethz.ch/en.html).
 
 🎯 My focus lies on 🧠Machine Learning and 👁️Computer Vision.
 
@@ -47,7 +50,7 @@
 - [Software Engineering](https://www.vorlesungen.ethz.ch//Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=136949&semkez=2020S&ansicht=KATALOGDATEN&lang=de)
 
 
-## 📂 Projects
+## 📂 Academic Projects
 Projects I have worked on during my studies at ETH Zurich.
 In order to respect the privacy of my fellow students, I will not publish any code here.
 The projects are listed in chronological order.
@@ -74,14 +77,9 @@ Developed a system to stimulate neuronal networks in vitro with light.
 - Working in a wet lab
 - Python programming
 
-## 🔧 Languages, Frameworks, Tools etc.
-A list of languages, frameworks and tools I have used before or am currently using.
+## 🔧 Tech Stack
+A list of languages, frameworks, tools etc. that I have used before or am currently using.
 Sorted by proficiency. The order within each proficiency category is random.
-
-
-
-
-
 
 
 | 🌟 Proficiency | 🌐 Languages                                                                                                                                                                                                                                                                                                 | 📦 Packages                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 🛠️ Tools                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 🔧 Frameworks                                                                                                   | 💻 IDEs                                                                                                                                                                                                                                                                                                                                                                               | 🖥️ OS                                                                                                                                                                                                                                       |  
