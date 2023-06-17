@@ -8,7 +8,7 @@ Social Media Icons
 </a>
 
 <a href="https://cyrillknecht.github.io">
-  <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlechrome.svg" alt="GitHub" style="width: 40px; height: 40px; filter: invert(1);">
+  <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlechrome.svg" alt="GitHub" width="40" height="40">
 </a>
 
 ## 🙋‍♂️ About Me
