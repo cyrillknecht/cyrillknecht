@@ -7,10 +7,6 @@ Social Media Icons
   <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="40" height="40">
 </a>
 
-<a href="https://cyrillknecht.github.io">
-  <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlechrome.svg" alt="GitHub" width="40" height="40">
-</a>
-
 ## 🙋‍♂️ About Me
 🎓 I’m currently studying 💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)
 @🏢[ETH Zurich](https://www.ethz.ch/en.html).
