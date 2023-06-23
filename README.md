@@ -8,12 +8,12 @@ Social Media Icons
 </a>
 
 ## 🙋‍♂️ About Me
-🎓 I’m currently studying 💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)
-@🏢[ETH Zurich](https://www.ethz.ch/en.html).
+🎓 I’m currently studying **💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)**
+@ **🏢[ETH Zurich](https://www.ethz.ch/en.html)**.
 
-🎯 My focus lies on 🧠Machine Learning and 👁️Computer Vision.
+🎯 My  academic focus lies on **🧠Machine Learning** and **👁️Computer Vision**.
 
-📚 I am also interested in 🤖Robotics and 👨‍💻Software Engineering in general.
+📚 I am also interested in **👨‍💻Software Engineering** and **🤖Robotics**.
 
 📞 You can reach me at 📧**cyrknech [at] student [dot] ethz [dot] ch** 
 
@@ -54,24 +54,37 @@ Sorted by proficiency. The order within each proficiency category is random.
 
 
 ## 📂 Projects
+
+During my studies at ETH Zurich I have worked on a variety of projects.
+In this section I will highlight some of the most relevant ones.
+
 <details>
-  <summary> Expand this to learn about my projects.</summary>
+  <summary> Expand this to learn more about my projects.</summary>
 
 ### 🎓 Academic Projects
 Projects I have worked on during my studies at ETH Zurich.
 In order to respect the privacy of my fellow students not all projects are public.
+All  available projects repositories that are public are linked below.
 The projects are listed in chronological order.
 
 #### 📚 Course Projects
-| Course               | Project                                                                            | Description                                                                                                                                         | 
-|----------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
-| Robot Learning       | ***Learning to Walk with World-Model-Based Reinforcement Learning (In Progress)*** | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
-| Software Engineering | ***No Limit Texas Hold'em Poker***                                                 | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
-| Deep Learning        | ***Self-Augmentation Network for Sarcasm Generation with Synthetic Data***         | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |    
+| Course               | Project                                                                                                                                 | Description                                                                                                                                         | 
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
+| Robot Learning       | ***Learning to Walk with World-Model-Based Reinforcement Learning (In Progress)***                                                      | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
+| Software Engineering | [***No Limit Texas Hold'em Poker***](https://github.com/cyrillknecht/nolimittexasholdem)                                                | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
+| Deep Learning        | [***Self-Augmentation Network for Sarcasm Generation with Synthetic Data***](https://github.com/cyrillknecht/DL_2022_Sarcasm_Generator) | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |    
 
 #### 🎓 Bachelor Thesis
-***Smart Patch Flagship Project:***
+[***Smart Patch Flagship Project:***](https://github.com/cyrillknecht/smartpatch_system)
 Developed a smart patch wearable device to monitor the health of the wearer.
+My work was focused on the software side of the project.
+Therefore, i developed a
+[basestation software package](https://github.com/cyrillknecht/smartpatch_basestation_software)
+to communicate with smart patches and showcase their data in a web application.
+Further I developed a 
+[cross-platform mobile application](https://github.com/cyrillknecht/smartpatch_connector_app) 
+to conveniently
+map smart patches to patients in the database.
 - Working with an IoT platform
 - Developing a cross-platform app with Flutter
 - Developing a communication interface between the app and the IoT platform and the smart patch using MQTT and BLE in Python
@@ -82,5 +95,7 @@ Developed and assembled a system to stimulate neuronal networks in vitro with li
 - Building an optical setup
 - Working in a wet lab
 - Python programming
+
+(Unfortunately, the project is not public)
 
 </details>
