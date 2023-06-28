@@ -109,5 +109,6 @@ The application is built with Flask and deployed on Google Cloud using Google Ku
 - Containerizing a web application with Docker
 - Using Kubernetes
 - Deploying a web application on Google Cloud
+- Use GitHub Actions for CI/CD
 
 </details>
