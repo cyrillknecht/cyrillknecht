@@ -11,9 +11,9 @@ Social Media Icons
 🎓 I’m currently studying **💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)**
 @ **🏢[ETH Zurich](https://www.ethz.ch/en.html)**.
 
-🎯 My  academic focus lies on **🧠Machine Learning** and **👁️Computer Vision**.
+📚 My  academic focus lies on all subtopics of **🧠Machine Learning** and **👁️Computer Vision**.
 
-📚 I am also interested in **👨‍💻Software Engineering** and **🤖Robotics**.
+🎯 I am also focussed on developing my **👨‍💻Software Engineering** skills.
 
 📞 You can reach me at 📧**cyrknech [at] student [dot] ethz [dot] ch** 
 
@@ -55,7 +55,6 @@ Sorted by proficiency. The order within each proficiency category is random.
 ## 📂 Projects
 
 During my studies at ETH Zurich I have worked on a variety of projects.
-In this section I will highlight some of the most relevant ones.
 
 <details>
   <summary> Expand this to learn more about my projects.</summary>
@@ -102,7 +101,7 @@ Projects I have worked on in my free time.
 All available projects repositories that are public are linked below.
 The projects are listed in chronological order.
 
-#### 🌐 [Sentiment Classification Web App](https://github.com/cyrillknecht/sentiment_classification_webapp)
+#### 🌐 [***Sentiment Classification Web App***](https://github.com/cyrillknecht/sentiment_classification_webapp)
 A web application that allows users to classify the sentiment of a given text.
 The application is built with Flask and deployed on Google Cloud using Google Kubernetes Engine.
 - Building a web application with Flask
