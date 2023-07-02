@@ -7,13 +7,13 @@ Social Media Icons
   <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="40" height="40">
 </a>
 
-## 🙋‍♂️ About Me
+## 👤 About Me
 🎓 I’m currently studying **💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)**
 @ **🏢[ETH Zurich](https://www.ethz.ch/en.html)**.
 
 📚 My  academic focus lies on all subtopics of **🧠Machine Learning** and **👁️Computer Vision**.
 
-🎯 I am also focussed on developing my **👨‍💻Software Engineering** skills.
+🎯 I am also focused on developing my **👨‍💻Software Engineering** skills.
 
 📞 You can reach me at 📧**cyrknech [at] student [dot] ethz [dot] ch** 
 
@@ -60,8 +60,9 @@ During my studies at ETH Zurich I have worked on a variety of projects.
   <summary> Expand this to learn more about my projects.</summary>
 
 ### 🎓 Academic Projects
-Projects I have worked on during my studies at ETH Zurich.
-In order to respect the privacy of my fellow students not all projects are public.
+Projects I have worked on for my studies at ETH Zurich.
+In order to respect the privacy of my fellow students and agreements with the respective labs,
+not all projects are public.
 All  available projects repositories that are public are linked below.
 The projects are listed in chronological order.
 
@@ -88,13 +89,13 @@ map smart patches to patients in the database.
 - Developing a communication interface between the app and the IoT platform and the smart patch using MQTT and BLE in Python
 
 #### 👥 Group Project
-***Optogenetic stimulation of neuronal networks in vitro***:
+***Optogenetic stimulation of neuronal networks in vitro (Not Public)***:
 Developed and assembled a system to stimulate neuronal networks in vitro with light.
 - Building an optical setup
 - Working in a wet lab
 - Python programming
 
-(Unfortunately, the project is not public)
+
 
 ### 💼 Personal Projects
 Projects I have worked on in my free time.
