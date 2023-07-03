@@ -59,6 +59,27 @@ During my studies at ETH Zurich I have worked on a variety of projects.
 <details>
   <summary> Expand this to learn more about my projects.</summary>
 
+### 💼 Personal Projects
+Projects I have worked on in my free time.
+All available projects repositories that are public are linked below.
+The projects are listed in chronological order.
+
+#### 🌐 [***Sentiment Classification Web App***](https://github.com/cyrillknecht/sentiment_classification_webapp)
+
+A web application that allows users to classify the sentiment of a given text.
+The application is built with Flask and deployed on Google Cloud using Google Kubernetes Engine.
+
+- Building a web application with Flask
+- Containerizing a web application with Docker
+- Using Kubernetes
+- Deploying a web application on Google Cloud
+- Using GitHub Actions to build a CI/CD pipeline
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-green.svg)](http://34.118.124.220/)
+[![Source Code](https://img.shields.io/badge/Source%20Code-Available-green.svg)](https://sentiment-classification-webapp-7q3j2.ondigitalocean.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
 ### 🎓 Academic Projects
 Projects I have worked on for my studies at ETH Zurich.
 In order to respect the privacy of my fellow students and agreements with the respective labs,
@@ -67,13 +88,14 @@ All  available projects repositories that are public are linked below.
 The projects are listed in chronological order.
 
 #### 📚 Course Projects
-| Course               | Project                                                                                                                                 | Description                                                                                                                                         | 
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
-| Robot Learning       | ***Learning to Walk with World-Model-Based Reinforcement Learning (In Progress)***                                                      | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
-| Software Engineering | [***No Limit Texas Hold'em Poker***](https://github.com/cyrillknecht/nolimittexasholdem)                                                | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
-| Deep Learning        | [***Self-Augmentation Network for Sarcasm Generation with Synthetic Data***](https://github.com/cyrillknecht/DL_2022_Sarcasm_Generator) | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |    
+| Course               | Project                                                                                                                                                                                                                                                                                | Description                                                                                                                                         | 
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
+| Robot Learning       | ***Learning to Walk with World-Model-Based Reinforcement Learning (In Progress)***                                                                                                                                                                                                     | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
+| Software Engineering | [***No Limit Texas Hold'em Poker***](https://github.com/cyrillknecht/nolimittexasholdem)<br>[![Source Code](https://img.shields.io/badge/Source%20Code-Available-green.svg)](https://github.com/cyrillknecht/nolimittexasholdem)                                                       | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
+| Deep Learning        | [***Self-Augmentation Network for Sarcasm Generation with Synthetic Data***](https://github.com/cyrillknecht/DL_2022_Sarcasm_Generator)<br>[![Source Code](https://img.shields.io/badge/Source%20Code-Available-green.svg)](https://github.com/cyrillknecht/DL_2022_Sarcasm_Generator) | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |    
 
 #### 🎓 Bachelor Thesis
+
 [***Smart Patch Flagship Project:***](https://github.com/cyrillknecht/smartpatch_system)
 Developed a smart patch wearable device to monitor the health of the wearer.
 My work was focused on the software side of the project.
@@ -88,6 +110,8 @@ map smart patches to patients in the database.
 - Developing a cross-platform app with Flutter
 - Developing a communication interface between the app and the IoT platform and the smart patch using MQTT and BLE in Python
 
+[![Source Code](https://img.shields.io/badge/Source%20Code-Partially%20Available-yellow.svg)](https://example.com/source)
+
 #### 👥 Group Project
 ***Optogenetic stimulation of neuronal networks in vitro (Not Public)***:
 Developed and assembled a system to stimulate neuronal networks in vitro with light.
@@ -95,20 +119,6 @@ Developed and assembled a system to stimulate neuronal networks in vitro with li
 - Working in a wet lab
 - Python programming
 
-
-
-### 💼 Personal Projects
-Projects I have worked on in my free time.
-All available projects repositories that are public are linked below.
-The projects are listed in chronological order.
-
-#### 🌐 [***Sentiment Classification Web App***](https://github.com/cyrillknecht/sentiment_classification_webapp)
-A web application that allows users to classify the sentiment of a given text.
-The application is built with Flask and deployed on Google Cloud using Google Kubernetes Engine.
-- Building a web application with Flask
-- Containerizing a web application with Docker
-- Using Kubernetes
-- Deploying a web application on Google Cloud
-- Using GitHub Actions to build a CI/CD pipeline
+![Source Code](https://img.shields.io/badge/Source%20Code-Private-red)
 
 </details>
