@@ -1,4 +1,4 @@
-# 👋😊 Hi, I’m Cyrill. Nice to meet you!
+# <img align=left src="https://user-images.githubusercontent.com/26017543/213809353-c908d93c-3dff-4694-9d13-e0e5cbdb879c.png" alt="Waving Hand" width="36" height="36" />😊 Hi, I’m Cyrill. Nice to meet you!
 
 <!---
 Social Media Icons
@@ -57,7 +57,7 @@ Sorted by proficiency. The order within each proficiency category is random.
 During my studies at ETH Zurich I have worked on a variety of projects.
 
 <details>
-  <summary> Expand this to learn more about my projects.</summary>
+  <summary>Expand this to learn more about my projects.</summary>
 
 ### 💼 Personal Projects
 Projects I have worked on in my free time.
