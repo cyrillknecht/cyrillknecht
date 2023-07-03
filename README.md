@@ -3,9 +3,10 @@
 <!---
 Social Media Icons
 -->
-<a href="https://www.linkedin.com/in/cyrill-david-knecht/">
-  <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" width="40" height="40">
-</a>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="cyrill-david-knecht" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ch.linkedin.com/in/cyrill-david-knecht?trk=profile-badge">Cyrill Knecht</a></div>
+              
 
 ## 👤 About Me
 🎓 I’m currently studying **💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)**
