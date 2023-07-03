@@ -11,7 +11,7 @@ Social Media Icons
 🎓 I’m currently studying **💻[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)**
 @ **🏢[ETH Zurich](https://www.ethz.ch/en.html)**.
 
-📚 My  academic focus lies on all subtopics of **🧠Machine Learning** and **👁️Computer Vision**.
+📚 My academic focus lies on all subtopics of **🧠Machine Learning** and **👁️Computer Vision**.
 
 🎯 I am also focused on developing my **👨‍💻Software Engineering** skills.
 
@@ -113,7 +113,7 @@ map smart patches to patients in the database.
 [![Source Code](https://img.shields.io/badge/Source%20Code-Partially%20Available-yellow.svg)](https://example.com/source)
 
 #### 👥 Group Project
-***Optogenetic stimulation of neuronal networks in vitro (Not Public)***:
+***Optogenetic stimulation of neuronal networks in vitro***:
 Developed and assembled a system to stimulate neuronal networks in vitro with light.
 - Building an optical setup
 - Working in a wet lab
