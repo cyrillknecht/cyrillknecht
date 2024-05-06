@@ -94,7 +94,8 @@ The projects are listed in chronological order.
 [***Generative Machine Learning for Radar-Based Vital Sign Monitoring:***](https://github.com/cyrillknecht/radar_vital_signs_ml)
 Explored the use of machine learning models to improve the performance of radar-based vital sign monitoring.
 Therefore, the performance of different machine learning models,
-including TCN(Temporal Convolutional Networks) and LSTM(Long Short-Term Memory)
+including [TCN(Temporal Convolutional Networks)](https://arxiv.org/abs/1803.01271) and 
+[LSTM(Long Short-Term Memory)](https://www.researchgate.net/publication/13853244_Long_Short-term_Memory),
 were compared to the performance of a traditional signal processing approach.
 
 - Testing and comparing different machine learning architectures
