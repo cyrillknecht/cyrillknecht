@@ -54,7 +54,7 @@ Sorted by proficiency. The order within each proficiency category is random.
 
 ## 📂 Projects
 
-During my studies at ETH Zurich I have worked on a variety of projects.
+During my studies at ETH Zurich, I have worked on a variety of projects.
 
 <details>
   <summary>Expand this to learn more about my projects.</summary>
@@ -82,15 +82,30 @@ The application is built with Flask and deployed on Google Cloud using Google Ku
 
 ### 🎓 Academic Projects
 Projects I have worked on for my studies at ETH Zurich.
-In order to respect the privacy of my fellow students and agreements with the respective labs,
+To respect the privacy of my fellow students and agreements with the respective labs,
 not all projects are public.
-All  available projects repositories that are public are linked below.
+All available project repositories that are public are linked below.
 The projects are listed in chronological order.
 
+#### 🎓🎓🎓 Master Thesis
+*🚧 Work In Progress 🚧*
+
+#### 🎓🎓 Semester Thesis
+[***Generative Machine Learning for Radar-Based Vital Sign Monitoring:***](https://github.com/cyrillknecht/radar_vital_signs_ml)
+Explored the use of machine learning models to improve the performance of radar-based vital sign monitoring.
+Therefore, the performance of different machine learning models,
+including TCN(Temporal Convolutional Networks) and LSTM(Long Short-Term Memory)
+were compared to the performance of a traditional signal processing approach.
+
+- Testing and comparing different machine learning architectures
+- Ablations on data input structure, preprocessing, and output structure
+- Working with raw Low-Power-FMCW radar data
+
+![Source Code](https://img.shields.io/badge/Source%20Code-Available-green.svg)
 #### 📚 Course Projects
 | Course               | Project                                                                                                                                                                                                                                                                                | Description                                                                                                                                         | 
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|      
-| Robot Learning       | ***Learning to Walk with World-Model-Based Reinforcement Learning (In Progress)***                                                                                                                                                                                                     | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
+| Robot Learning       | ***Learning to Walk with World-Model-Based Reinforcement Learning***  ![Source Code](https://img.shields.io/badge/Source%20Code-Private-red)                                                                                                                                           | Used the Dreamer Reinforcement Learning algorithm to train a quadruped robot (Unitree Go1) to walk different terrains in the Isaac Gym environment. |  
 | Software Engineering | [***No Limit Texas Hold'em Poker***](https://github.com/cyrillknecht/nolimittexasholdem)<br>[![Source Code](https://img.shields.io/badge/Source%20Code-Available-green.svg)](https://github.com/cyrillknecht/nolimittexasholdem)                                                       | Developed a multiplayer poker game using C++ and wxWidgets.                                                                                         |      
 | Deep Learning        | [***Self-Augmentation Network for Sarcasm Generation with Synthetic Data***](https://github.com/cyrillknecht/DL_2022_Sarcasm_Generator)<br>[![Source Code](https://img.shields.io/badge/Source%20Code-Available-green.svg)](https://github.com/cyrillknecht/DL_2022_Sarcasm_Generator) | Made use of GPT-2 to generate synthetic data and fine-tuned Bert for sarcasm detection.                                                             |    
 
