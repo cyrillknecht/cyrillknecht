@@ -96,7 +96,7 @@ Explored the use of machine learning models to improve the performance of radar-
 Therefore, the performance of different machine learning models,
 including [TCN(Temporal Convolutional Networks)](https://arxiv.org/abs/1803.01271) and 
 [LSTM(Long Short-Term Memory)](https://www.researchgate.net/publication/13853244_Long_Short-term_Memory),
-were compared to the performance of a traditional signal processing approach.
+was compared to the performance of a traditional signal processing approach.
 
 - Testing and comparing different machine learning architectures
 - Ablations on data input structure, preprocessing, and output structure
