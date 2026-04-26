@@ -10,9 +10,9 @@ Social Media Icons
 ## 👤 About Me
 💼 I work as a **💻 Software & Data Engineer**.
 
-🎓 I graduated from **🏢[ETH Zurich](https://www.ethz.ch/en.html)** with a Master's degree in **[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)**.
+🎓 I graduated from **🏢[ETH Zurich](https://www.ethz.ch/en.html)** with a Master's degree in **[Electrical Engineering and Information Technology](https://ee.ethz.ch/studies/master-s-programmes/main-master.html)** with a focus on **Machine Learning** and **AI**.
 
-🔧 My focus is on building **data pipelines**, **microservices**, and **distributed systems**.
+🔧 I now work mostly on building **data pipelines**, **microservices**, and **distributed systems**.
 
 📞 You can reach me on **[LinkedIn](https://www.linkedin.com/in/cyrill-david-knecht/)**.
 
