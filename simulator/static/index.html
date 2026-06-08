@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>COP — Switzerland ISR Simulator</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/milsymbol@2.2.0/dist/milsymbol.js"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green:   #00ff88;
+    --red:     #ff3344;
+    --amber:   #ffaa00;
+    --blue:    #33aaff;
+    --dim:     #4a6a5a;
+    --bg:      rgba(5, 10, 18, 0.88);
+    --border:  #0d3d26;
+    --font:    'Share Tech Mono', monospace;
+  }
+
+  html, body { height: 100%; background: #060a0f; color: var(--green); font-family: var(--font); font-size: 13px; }
+
+  #map { position: absolute; inset: 0; z-index: 0; }
+
+  /* ── HUD panels ─────────────────────────────────────────────────── */
+  .hud {
+    position: absolute;
+    z-index: 1000;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(6px);
+    padding: 10px 14px;
+  }
+
+  /* Top bar */
+  #hud-top {
+    top: 10px; left: 50%; transform: translateX(-50%);
+    min-width: 680px;
+    display: flex; align-items: center; gap: 24px;
+    border-color: var(--border);
+  }
+  #hud-top .title {
+    font-size: 15px; letter-spacing: 3px; color: var(--amber);
+    white-space: nowrap;
+  }
+  #hud-top .sep { color: var(--dim); }
+  .stat-block { display: flex; flex-direction: column; align-items: center; min-width: 80px; }
+  .stat-label { font-size: 9px; letter-spacing: 2px; color: var(--dim); }
+  .stat-value { font-size: 18px; letter-spacing: 1px; }
+  .stat-value.red   { color: var(--red);   }
+  .stat-value.blue  { color: var(--blue);  }
+  .stat-value.amber { color: var(--amber); }
+  .stat-value.green { color: var(--green); }
+
+  /* Wave badge */
+  #wave-badge {
+    padding: 4px 12px;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-size: 13px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  /* Left panel — entity type breakdown */
+  #hud-left {
+    top: 80px; left: 10px;
+    width: 210px;
+  }
+  #hud-left h3 {
+    font-size: 9px; letter-spacing: 3px; color: var(--dim);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px; margin-bottom: 8px;
+  }
+  .type-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 2px 0;
+  }
+  .type-name { color: #aac; font-size: 12px; }
+  .type-count { font-size: 13px; }
+  .type-count.attacker { color: var(--red);  }
+  .type-count.defender { color: var(--blue); }
+  .type-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block; margin-right: 6px;
+  }
+
+  /* Bottom bar — progress + connection */
+  #hud-bottom {
+    bottom: 24px; left: 50%; transform: translateX(-50%);
+    min-width: 600px; padding: 8px 16px;
+  }
+  #progress-label {
+    font-size: 9px; letter-spacing: 2px; color: var(--dim);
+    margin-bottom: 4px; display: flex; justify-content: space-between;
+  }
+  #progress-bar-wrap {
+    height: 4px; background: #0d1a10; border: 1px solid var(--border);
+    position: relative;
+  }
+  #progress-bar-fill {
+    height: 100%; background: var(--green);
+    transition: width 0.8s linear;
+  }
+  /* Wave tick marks */
+  .wave-tick {
+    position: absolute; top: -4px; width: 1px; height: 12px;
+    background: var(--amber); opacity: 0.7;
+  }
+  #conn-status {
+    margin-top: 6px; font-size: 10px; letter-spacing: 1px;
+    display: flex; justify-content: space-between;
+  }
+  .dot-live { color: var(--green); }
+  .dot-dead { color: var(--red);   }
+
+  /* Time scale control */
+  #hud-timescale {
+    top: 10px; right: 10px;
+    display: flex; flex-direction: column; gap: 6px;
+    min-width: 160px;
+  }
+  #hud-timescale h3 {
+    font-size: 9px; letter-spacing: 3px; color: var(--dim);
+    border-bottom: 1px solid var(--border); padding-bottom: 4px;
+  }
+  .ts-btn {
+    background: #0a1a10; border: 1px solid var(--border);
+    color: var(--green); font-family: var(--font); font-size: 12px;
+    padding: 4px 0; cursor: pointer; letter-spacing: 1px;
+    transition: background 0.15s, border-color 0.15s;
+    text-align: center;
+  }
+  .ts-btn:hover    { background: #0d2a18; border-color: var(--green); }
+  .ts-btn.active   { background: #0d3a1a; border-color: var(--green); color: var(--amber); }
+  #ts-custom-wrap { display: flex; gap: 4px; }
+  #ts-custom {
+    flex: 1; background: #0a1a10; border: 1px solid var(--border);
+    color: var(--green); font-family: var(--font); font-size: 12px;
+    padding: 4px 6px;
+  }
+  #ts-custom:focus { outline: none; border-color: var(--green); }
+  #ts-apply {
+    background: #0a1a10; border: 1px solid var(--border);
+    color: var(--amber); font-family: var(--font); font-size: 12px;
+    padding: 4px 8px; cursor: pointer;
+  }
+  #ts-apply:hover { background: #1a2a10; }
+
+  /* Detail panel */
+  #hud-detail {
+    bottom: 80px; right: 10px;
+    width: 240px; display: none;
+  }
+  #hud-detail h3 {
+    font-size: 9px; letter-spacing: 3px; color: var(--dim);
+    border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 8px;
+  }
+  .detail-row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .detail-key   { color: var(--dim); font-size: 11px; }
+  .detail-val   { font-size: 12px; }
+  .detail-val.red  { color: var(--red);  }
+  .detail-val.blue { color: var(--blue); }
+  #detail-close {
+    margin-top: 8px; width: 100%;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--dim); font-family: var(--font); font-size: 11px;
+    padding: 3px; cursor: pointer;
+  }
+  #detail-close:hover { border-color: var(--green); color: var(--green); }
+
+  /* Leaflet dark overrides */
+  .leaflet-tile-pane { filter: brightness(0.7) saturate(0.6); }
+  .leaflet-control-zoom a { background: #0a1a10 !important; color: var(--green) !important; border-color: var(--border) !important; }
+  .leaflet-control-attribution { background: rgba(5,10,18,0.7) !important; color: #334 !important; }
+  .leaflet-control-attribution a { color: #445 !important; }
+
+  /* Marker icons */
+  .mil-icon { background: none; border: none; }
+  .mil-icon svg { filter: drop-shadow(0 0 3px currentColor); }
+  .mil-icon.attacker svg { filter: drop-shadow(0 0 4px #ff3344cc); }
+  .mil-icon.defender  svg { filter: drop-shadow(0 0 4px #33aaffcc); }
+
+  /* Scan line effect */
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 9999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    pointer-events: none;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<!-- Top status bar -->
+<div class="hud" id="hud-top">
+  <span class="title">◈ COP // SWITZERLAND</span>
+  <span class="sep">│</span>
+  <div id="wave-badge">WAVE 1</div>
+  <span class="sep">│</span>
+  <div class="stat-block">
+    <span class="stat-label">ELAPSED</span>
+    <span class="stat-value amber" id="stat-elapsed">00:00:00</span>
+  </div>
+  <div class="stat-block">
+    <span class="stat-label">HOSTILE</span>
+    <span class="stat-value red" id="stat-attackers">0</span>
+  </div>
+  <div class="stat-block">
+    <span class="stat-label">FRIENDLY</span>
+    <span class="stat-value blue" id="stat-defenders">0</span>
+  </div>
+  <div class="stat-block">
+    <span class="stat-label">TOTAL</span>
+    <span class="stat-value green" id="stat-total">0</span>
+  </div>
+</div>
+
+<!-- Left entity breakdown -->
+<div class="hud" id="hud-left">
+  <h3>ENTITY BREAKDOWN</h3>
+  <div id="type-list"></div>
+</div>
+
+<!-- Time scale -->
+<div class="hud" id="hud-timescale">
+  <h3>TIME SCALE</h3>
+  <button class="ts-btn" onclick="setScale(1)">1× REALTIME</button>
+  <button class="ts-btn" onclick="setScale(10)">10×</button>
+  <button class="ts-btn active" onclick="setScale(60)">60×</button>
+  <button class="ts-btn" onclick="setScale(300)">300×</button>
+  <div id="ts-custom-wrap">
+    <input id="ts-custom" type="number" min="1" max="9999" placeholder="custom"/>
+    <button id="ts-apply" onclick="applyCustomScale()">GO</button>
+  </div>
+  <button class="ts-btn" style="margin-top:4px;border-color:#1a3a5c;color:#445" onclick="resetScenario()">⟳ RESET</button>
+</div>
+
+<!-- Detail panel -->
+<div class="hud" id="hud-detail">
+  <h3>ENTITY DETAIL</h3>
+  <div id="detail-content"></div>
+  <button id="detail-close" onclick="closeDetail()">✕ CLOSE</button>
+</div>
+
+<!-- Bottom progress bar -->
+<div class="hud" id="hud-bottom">
+  <div id="progress-label">
+    <span>SCENARIO PROGRESS</span>
+    <span id="progress-pct">0.0%</span>
+  </div>
+  <div id="progress-bar-wrap">
+    <div id="progress-bar-fill" style="width:0%"></div>
+    <!-- Wave tick marks injected by JS -->
+  </div>
+  <div id="conn-status">
+    <span id="conn-dot" class="dot-dead">● DISCONNECTED</span>
+    <span id="entity-frame-info">— entities</span>
+  </div>
+</div>
+
+<script>
+// ── Config ───────────────────────────────────────────────────────────────────
+
+const API_BASE = `${location.protocol}//${location.host}`;
+const WS_BASE  = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}`;
+
+// ── Map init ─────────────────────────────────────────────────────────────────
+
+const map = L.map('map', {
+  center: [47.2, 8.8],   // centred between Germany and Switzerland
+  zoom: 7,
+  zoomControl: true,
+  attributionControl: true,
+});
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap contributors © CARTO',
+  subdomains: 'abcd',
+  maxZoom: 19,
+}).addTo(map);
+
+// Border crossing markers (static reference points)
+const crossings = [
+  { name: 'WESTERN (BASEL)',       lat: 47.56, lon: 7.59  },
+  { name: 'CENTRAL (SCHAFFHAUSEN)',lat: 47.70, lon: 8.63  },
+  { name: 'EASTERN (KREUZLINGEN)', lat: 47.66, lon: 9.18  },
+];
+crossings.forEach(c => {
+  L.circleMarker([c.lat, c.lon], {
+    radius: 5, color: '#ffaa00', fillColor: '#ffaa0055',
+    fillOpacity: 0.5, weight: 1,
+  }).bindTooltip(`⚠ ${c.name}`, { permanent: false, className: '' }).addTo(map);
+});
+
+// Swiss target markers (static reference)
+const targets = [
+  { name: 'PAYERNE AB',   lat: 46.843, lon: 6.917  },
+  { name: 'MEIRINGEN AB', lat: 46.742, lon: 8.110  },
+  { name: 'SION AB',      lat: 46.221, lon: 7.327  },
+  { name: 'ZÜRICH',       lat: 47.376, lon: 8.541  },
+  { name: 'BERN',         lat: 46.948, lon: 7.447  },
+  { name: 'GENEVA',       lat: 46.204, lon: 6.143  },
+];
+targets.forEach(t => {
+  L.circleMarker([t.lat, t.lon], {
+    radius: 4, color: '#ff334455', fillColor: '#ff334422',
+    fillOpacity: 0.3, weight: 1, dashArray: '3',
+  }).bindTooltip(`⊕ ${t.name}`, { permanent: false }).addTo(map);
+});
+
+// ── MIL-STD-2525 SIDC mapping ─────────────────────────────────────────────────
+
+const SIDC = {
+  // Attacker (H = Hostile)
+  cruise_missile:        'SHMPNM----',
+  ballistic_missile:     'SHMPNB----',
+  fighter_jet:           'SHAP------',
+  attack_aircraft:       'SHAP------',
+  ew_aircraft:           'SHAPE-----',
+  bomber:                'SHAPB-----',
+  helicopter_attack:     'SHAHR-----',
+  helicopter_transport:  'SHAHRT----',
+  uav_recon:             'SHAPMFQ---',
+  uav_fpv:               'SHAPMFQ---',
+  uav_loiter:            'SHAPMFQ---',
+  tank:                  'SHGXUCFRH-',
+  apc:                   'SHGXUCIZ--',
+  truck:                 'SHGXUS----',
+  mlrs:                  'SHGXUCFRL-',
+  train:                 'SHGT------',
+  // Defender (F = Friendly)
+  interceptor:           'SFAP------',
+  sam_site:              'SFGPAADS--',
+};
+
+// Cache rendered icons (SIDC → data URL)
+const iconCache = {};
+
+function getSIDC(type, faction) {
+  if (SIDC[type]) return SIDC[type];
+  return faction === 'attacker' ? 'SHUP------' : 'SFUP------';
+}
+
+function buildIcon(type, faction, heading) {
+  const sidc = getSIDC(type, faction);
+  const cacheKey = sidc; // heading encoded via CSS, not milsymbol
+  if (!iconCache[cacheKey]) {
+    const sym = new ms.Symbol(sidc, { size: 22, staffLength: 0 });
+    iconCache[cacheKey] = {
+      url:    sym.toDataURL(),
+      width:  sym.getSize().width,
+      height: sym.getSize().height,
+      ax:     sym.getAnchor().x,
+      ay:     sym.getAnchor().y,
+    };
+  }
+  const ic = iconCache[cacheKey];
+  const isGround = ['tank','apc','truck','mlrs','train','sam_site'].includes(type);
+  const rotation = isGround ? 0 : (heading - 90); // aircraft point in direction of travel
+
+  return L.divIcon({
+    html: `<img src="${ic.url}" style="
+      width:${ic.width}px; height:${ic.height}px;
+      transform:rotate(${rotation}deg);
+      transform-origin:${ic.ax}px ${ic.ay}px;
+      filter: drop-shadow(0 0 3px ${faction === 'attacker' ? '#ff3344' : '#33aaff'});
+    "/>`,
+    className: `mil-icon ${faction}`,
+    iconSize:   [ic.width, ic.height],
+    iconAnchor: [ic.ax,    ic.ay],
+  });
+}
+
+// ── Entity marker management ──────────────────────────────────────────────────
+
+const markers     = {};   // id → L.Marker
+const entityData  = {};   // id → latest snapshot dict
+
+function updateMarkers(entities) {
+  const seen = new Set();
+
+  entities.forEach(e => {
+    seen.add(e.id);
+    const pos = [e.position.lat, e.position.lon];
+
+    if (!markers[e.id]) {
+      // First time: create marker
+      const icon = buildIcon(e.entity_type, e.faction, e.heading_deg);
+      const m = L.marker(pos, { icon, title: e.name })
+        .addTo(map)
+        .on('click', () => showDetail(e));
+      markers[e.id] = m;
+    } else {
+      // Update position
+      markers[e.id].setLatLng(pos);
+      // Refresh icon only if heading changed significantly (perf optimisation)
+      const prev = entityData[e.id];
+      if (!prev || Math.abs(prev.heading_deg - e.heading_deg) > 5) {
+        markers[e.id].setIcon(buildIcon(e.entity_type, e.faction, e.heading_deg));
+      }
+      // Re-bind click with fresh data
+      markers[e.id].off('click').on('click', () => showDetail(e));
+    }
+    entityData[e.id] = e;
+  });
+
+  // Remove markers for entities no longer in snapshot (pending / despawned)
+  Object.keys(markers).forEach(id => {
+    if (!seen.has(id)) {
+      map.removeLayer(markers[id]);
+      delete markers[id];
+      delete entityData[id];
+    }
+  });
+}
+
+// ── HUD updates ───────────────────────────────────────────────────────────────
+
+const TYPE_LABELS = {
+  cruise_missile:       'CRUISE MSL',
+  ballistic_missile:    'BALLISTIC MSL',
+  fighter_jet:          'FIGHTER',
+  attack_aircraft:      'ATTACK A/C',
+  ew_aircraft:          'EW AIRCRAFT',
+  bomber:               'BOMBER',
+  helicopter_attack:    'ATCK HELO',
+  helicopter_transport: 'TPRT HELO',
+  uav_recon:            'UAV RECON',
+  uav_fpv:              'UAV FPV',
+  uav_loiter:           'UAV LOITER',
+  tank:                 'TANK',
+  apc:                  'APC',
+  truck:                'TRUCK',
+  mlrs:                 'MLRS',
+  train:                'TRAIN',
+  interceptor:          'INTERCEPTOR',
+  sam_site:             'SAM SITE',
+};
+
+const WAVE_NAMES = ['', 'WAVE 1 — STRIKE', 'WAVE 2 — AIR', 'WAVE 3 — SWARM', 'WAVE 4 — GROUND', 'WAVE 5 — ECHELON 2', 'WAVE 6 — FOLLOW-ON'];
+// Wave trigger times as fraction of total duration (approx)
+const WAVE_TIMES_S = [0, 120, 300, 600, 900, 1800]; // seconds
+
+let scenarioDuration = 41327; // fallback; updated from status
+
+function formatElapsed(secs) {
+  const h = Math.floor(secs / 3600).toString().padStart(2, '0');
+  const m = Math.floor((secs % 3600) / 60).toString().padStart(2, '0');
+  const s = Math.floor(secs % 60).toString().padStart(2, '0');
+  return `${h}:${m}:${s}`;
+}
+
+function updateHUD(entities, status) {
+  // Entity counts
+  const attackers = entities.filter(e => e.faction === 'attacker').length;
+  const defenders = entities.filter(e => e.faction === 'defender').length;
+  document.getElementById('stat-attackers').textContent = attackers;
+  document.getElementById('stat-defenders').textContent = defenders;
+  document.getElementById('stat-total').textContent = entities.length;
+  document.getElementById('entity-frame-info').textContent =
+    `${entities.length} entities / frame`;
+
+  // Wave badge
+  if (status) {
+    const wave = status.current_wave || 1;
+    document.getElementById('wave-badge').textContent = WAVE_NAMES[wave] || `WAVE ${wave}`;
+    document.getElementById('stat-elapsed').textContent = formatElapsed(status.elapsed_seconds);
+
+    const pct = status.loop_progress_pct || 0;
+    document.getElementById('progress-pct').textContent = pct.toFixed(1) + '%';
+    document.getElementById('progress-bar-fill').style.width = pct + '%';
+
+    if (status.scenario_duration_seconds) {
+      scenarioDuration = status.scenario_duration_seconds;
+    }
+  }
+
+  // Entity type breakdown
+  const counts = {};
+  entities.forEach(e => {
+    const k = `${e.faction}:${e.entity_type}`;
+    counts[k] = (counts[k] || 0) + 1;
+  });
+
+  const list = document.getElementById('type-list');
+  list.innerHTML = '';
+  Object.entries(counts)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .forEach(([key, count]) => {
+      const [faction, type] = key.split(':');
+      const row = document.createElement('div');
+      row.className = 'type-row';
+      row.innerHTML = `
+        <span class="type-name">
+          <span class="type-dot" style="background:${faction === 'attacker' ? '#ff3344' : '#33aaff'}"></span>
+          ${TYPE_LABELS[type] || type}
+        </span>
+        <span class="type-count ${faction}">${count}</span>`;
+      list.appendChild(row);
+    });
+}
+
+// Wave tick marks on progress bar
+function initWaveTicks() {
+  const wrap = document.getElementById('progress-bar-wrap');
+  WAVE_TIMES_S.forEach((t, i) => {
+    if (i === 0) return;
+    const pct = (t / scenarioDuration) * 100;
+    const tick = document.createElement('div');
+    tick.className = 'wave-tick';
+    tick.style.left = pct + '%';
+    tick.title = `Wave ${i+1}`;
+    wrap.appendChild(tick);
+  });
+}
+
+// ── Detail panel ──────────────────────────────────────────────────────────────
+
+function showDetail(e) {
+  const faction = e.faction === 'attacker' ? 'red' : 'blue';
+  const rows = [
+    ['NAME',     e.name,                          faction],
+    ['TYPE',     TYPE_LABELS[e.entity_type] || e.entity_type, ''],
+    ['FACTION',  e.faction.toUpperCase(),         faction],
+    ['WAVE',     e.wave,                          'amber'],
+    ['STATUS',   e.status.toUpperCase(),          ''],
+    ['LAT',      e.position.lat.toFixed(5) + '°', ''],
+    ['LON',      e.position.lon.toFixed(5) + '°', ''],
+    ['ALT',      e.position.alt_m.toFixed(0) + ' m', ''],
+    ['HEADING',  e.heading_deg.toFixed(1) + '°',  ''],
+    ['SPEED',    e.speed_kmh.toFixed(0) + ' km/h',''],
+  ];
+  document.getElementById('detail-content').innerHTML = rows.map(([k, v, cls]) =>
+    `<div class="detail-row">
+       <span class="detail-key">${k}</span>
+       <span class="detail-val ${cls}">${v}</span>
+     </div>`
+  ).join('');
+  document.getElementById('hud-detail').style.display = 'block';
+}
+
+function closeDetail() {
+  document.getElementById('hud-detail').style.display = 'none';
+}
+
+// ── Time scale controls ───────────────────────────────────────────────────────
+
+function setScale(scale) {
+  document.querySelectorAll('.ts-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  fetch(`${API_BASE}/scenario/time_scale`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ scale }),
+  });
+}
+
+function applyCustomScale() {
+  const val = parseFloat(document.getElementById('ts-custom').value);
+  if (val > 0) {
+    document.querySelectorAll('.ts-btn').forEach(b => b.classList.remove('active'));
+    fetch(`${API_BASE}/scenario/time_scale`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ scale: val }),
+    });
+  }
+}
+
+function resetScenario() {
+  fetch(`${API_BASE}/scenario/reset`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ time_scale: currentScale() }),
+  });
+}
+
+function currentScale() {
+  const active = document.querySelector('.ts-btn.active');
+  if (!active) return 1;
+  const m = active.textContent.match(/(\d+)/);
+  return m ? parseFloat(m[1]) : 1;
+}
+
+// ── WebSocket ─────────────────────────────────────────────────────────────────
+
+let ws = null;
+let reconnectDelay = 1000;
+
+function connectWS() {
+  ws = new WebSocket(`${WS_BASE}/scenario/stream`);
+
+  ws.onopen = () => {
+    document.getElementById('conn-dot').className = 'dot-live';
+    document.getElementById('conn-dot').textContent = '● LIVE';
+    reconnectDelay = 1000;
+    initWaveTicks();
+  };
+
+  ws.onmessage = async (ev) => {
+    const entities = JSON.parse(ev.data);
+    updateMarkers(entities);
+
+    // Fetch status for wave/elapsed/progress (every frame, it's lightweight)
+    try {
+      const r = await fetch(`${API_BASE}/scenario/status`);
+      const status = await r.json();
+      updateHUD(entities, status);
+    } catch {
+      updateHUD(entities, null);
+    }
+  };
+
+  ws.onclose = () => {
+    document.getElementById('conn-dot').className = 'dot-dead';
+    document.getElementById('conn-dot').textContent = `● RECONNECTING IN ${reconnectDelay/1000}s`;
+    setTimeout(() => {
+      reconnectDelay = Math.min(reconnectDelay * 2, 16000);
+      connectWS();
+    }, reconnectDelay);
+  };
+
+  ws.onerror = () => ws.close();
+}
+
+// ── Start ─────────────────────────────────────────────────────────────────────
+
+// Default to 60× on load
+fetch(`${API_BASE}/scenario/time_scale`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ scale: 60 }),
+});
+
+connectWS();
+</script>
+</body>
+</html>
